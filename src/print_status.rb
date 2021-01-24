@@ -4,13 +4,9 @@ class PrintStatus
 	end
 
 	def print_status
-		puts "Slot No.\t Registration No\t Type\tSlot free?\tSlot type"
+		puts "Slot No.\t Registration No\t Vehical type\tSlot type"
 		@slots.each do | slot |
-			if slot.free?
-				puts "#{ slot.id }\t\t N/A\t\t N/A\t\t yes\t\t#{ slot.type }"
-			else
-				puts "#{ slot.id }\t\t #{ slot.vehicle_number }\t\t #{ slot.vehicle_type }\t\t no\t\t#{ slot.type }"
-			end
+			puts "#{ slot.id }\t\t #{ slot.vehicle_number || 'Not Applicable' }\t\t #{ slot.vehicle_type || 'N/A'}\t\t#{ slot.type }" unless slot.free?
 		end
 	end
 end

@@ -1,2 +1,8 @@
 create_parking_lot 2 3
 status
+park KA-01-HH-1234 bike
+park KA-01-HH-2701 bike
+park KA-01-BB-0001 bike
+park KA-01-HH-9999 car
+park KA-01-HH-7777 car
+status
