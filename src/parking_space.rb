@@ -5,13 +5,16 @@ class ParkingSpace
 
   attr_accessor :slots
 
-  def initialize(number_of_slots)
+  def initialize(num_of_bike_slots, num_of_car_slots)
+    num_of_slots = num_of_bike_slots + num_of_car_slots
     @slots = []
-    number_of_slots.to_i.times do |index|
+    num_of_slots.times do |index|
+      slot_type = num_of_bike_slots > 0 ? 'bike' : 'car'
+      num_of_bike_slots = num_of_bike_slots - 1
       slot_number = index + 1
-      slots[index] = Slot.new(slot_number)
+      slots[index] = Slot.new(slot_number, slot_type)
     end
-    puts "Created a parking lot with #{ number_of_slots } slots"
+    puts "Created a parking lot with #{ num_of_slots } slots"
   end
 
   def status

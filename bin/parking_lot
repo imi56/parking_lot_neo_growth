@@ -25,9 +25,10 @@ class ParkingLot
 	  input.split("\n").each do |input|
 	    sliced_input = input.split(/\s/)
 			command_name = sliced_input[0]
-	    if  command_name == 'create_parking_lot'
-	      no_of_slots = sliced_input[1]
-	      parking_lot = ParkingSpace.new(no_of_slots)
+			if  command_name == 'create_parking_lot'
+	      bike_slots = sliced_input[1].to_i
+	      car_slots = sliced_input[2].to_i
+	      parking_lot = ParkingSpace.new(bike_slots, car_slots)
 	    else
 	      parking_lot.send(command_name, *([sliced_input[1], sliced_input[2]].compact))
 	    end
