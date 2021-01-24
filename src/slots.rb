@@ -31,4 +31,8 @@ class Slot
     vehicle.vehicle_type if vehicle
   end
 
+  def free
+    self.vehicle = nil
+  end
+
 end

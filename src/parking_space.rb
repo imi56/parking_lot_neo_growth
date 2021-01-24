@@ -2,6 +2,7 @@ require_relative './slots'
 require_relative './find_free_slot'
 require_relative './print_status'
 require_relative './park'
+require_relative './unpark'
 
 class ParkingSpace
 
@@ -32,6 +33,10 @@ class ParkingSpace
     else
       parking_lot_full_handler(vehicle_type)
     end
+  end
+
+  def unpark(slot_number)
+    Unpark.new(slots, slot_number).unpark
   end
 
   private
