@@ -3,6 +3,7 @@ require_relative './find_free_slot'
 require_relative './print_status'
 require_relative './park'
 require_relative './unpark'
+require_relative './vehical_finder'
 
 class ParkingSpace
 
@@ -37,6 +38,10 @@ class ParkingSpace
 
   def unpark(slot_number)
     Unpark.new(slots, slot_number).unpark
+  end
+
+  def slot_number_for_registration_number (vehicle_number)
+    VehicalFinder.new(slots).find_slot(vehicle_number)
   end
 
   private
