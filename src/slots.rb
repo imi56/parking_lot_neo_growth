@@ -5,4 +5,8 @@ class Slot
     @id = id.to_i
   end
 
+  def free?
+    self.vehicle == nil
+  end
+
 end
