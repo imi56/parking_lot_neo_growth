@@ -15,8 +15,8 @@ class ParkingLot
 	  end
 	  begin
 	    process_commands(input)
-	  rescue StandardError => file
-	  	puts "Error processing input. Error - #{ file }"
+		rescue StandardError => file
+			puts "Error processing input. Error - #{ file }"
 	  end
 	end
 

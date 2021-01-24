@@ -26,6 +26,7 @@ class ParkingSpace
 
   def park(vehicle_number, vehicle_type)
     free_slot = FindFreeSlot.new.find_parking_slot(slots, vehicle_type)
+    puts "Parking #{vehicle_type} - #{vehicle_number}"
     if free_slot
       Park.new.park_my_vehicle(vehicle_number, vehicle_type, free_slot)
     else
@@ -37,6 +38,7 @@ class ParkingSpace
 
   def parking_lot_full_handler(vehicle_type)
     puts ParkingSpace::PARKING_FULL_MESSAGE % [vehicle_type]
+    puts
   end
 
 end
